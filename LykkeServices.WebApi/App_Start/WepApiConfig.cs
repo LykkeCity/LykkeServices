@@ -2,6 +2,7 @@
 using Autofac;
 using Autofac.Integration.WebApi;
 using LykkeServices.WebApi.Proxy.DictionaryService;
+using LykkeServices.WebApi.Proxy.IpGeoLocation;
 
 namespace LykkeServices.WebApi
 {
@@ -14,6 +15,7 @@ namespace LykkeServices.WebApi
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
             builder.RegisterType<DictionaryServiceProxy>().As<IDictionaryServiceProxy>().SingleInstance();
+            builder.RegisterType<IpGeoLocationProxy>().As<IIpGeoLocationProxy>().SingleInstance();
 
             var container = builder.Build();
             return container;
