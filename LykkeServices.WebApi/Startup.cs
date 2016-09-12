@@ -10,6 +10,8 @@ namespace LykkeServices.WebApi
         {
             var config = new HttpConfiguration();
 
+            SwaggerConfig.Register(config);
+
             var container = WepApiConfig.Build();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 

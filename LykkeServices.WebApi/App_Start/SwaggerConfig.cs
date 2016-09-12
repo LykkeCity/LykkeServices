@@ -9,12 +9,9 @@ namespace LykkeServices.WebApi
 {
     public class SwaggerConfig
     {
-        public static void Register()
+        public static void Register(HttpConfiguration config)
         {
-            var thisAssembly = typeof(SwaggerConfig).Assembly;
-
-            GlobalConfiguration.Configuration
-                .EnableSwagger(c => { c.SingleApiVersion("v1", "LykkeServices"); })
+            config.EnableSwagger(c => { c.SingleApiVersion("v1", "LykkeServices"); })
                 .EnableSwaggerUi(c => { });
         }
     }
