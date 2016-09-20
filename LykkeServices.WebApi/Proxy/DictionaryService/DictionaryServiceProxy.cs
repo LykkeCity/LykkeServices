@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Lykke.Core.Domain.Assets.Models;
 using Lykke.Core.Domain.Country.Models;
 using Lykke.Core.Domain.Dictionary;
 using Microsoft.ServiceFabric.Actors;
@@ -22,6 +23,11 @@ namespace LykkeServices.WebApi.Proxy.DictionaryService
         public async Task<IEnumerable<CountryItem>> GetCountriesAsync(string language)
         {
             return await _actorProxy.GetCountriesAsync(language);
+        }
+
+        public async Task<IEnumerable<AssetPair>> GetMarginalAssetPairsAsync()
+        {
+            return await _actorProxy.GetMarginalAssetPairsAsync();
         }
 
         public async Task<IEnumerable<Asset>> GetMarginalAssetsAsync()
