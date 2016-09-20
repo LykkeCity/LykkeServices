@@ -34,5 +34,10 @@ namespace LykkeServices.WebApi.Proxy.DictionaryService
         {
             return await _actorProxy.GetMarginalAssetsAsync();
         }
+
+        public async Task<IEnumerable<Issuer>> GetMarginalIssuersAsync()
+        {
+            return await _actorProxy.GetMarginalIssuersAsync();
+        }
     }
 }

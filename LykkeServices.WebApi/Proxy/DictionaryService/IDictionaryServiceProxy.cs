@@ -12,5 +12,7 @@ namespace LykkeServices.WebApi.Proxy.DictionaryService
         Task<IEnumerable<AssetPair>> GetMarginalAssetPairsAsync();
 
         Task<IEnumerable<Asset>> GetMarginalAssetsAsync();
+
+        Task<IEnumerable<Issuer>> GetMarginalIssuersAsync();
     }
 }
