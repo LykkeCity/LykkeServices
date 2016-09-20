@@ -7,5 +7,7 @@ namespace LykkeServices.WebApi.Proxy.DictionaryService
     public interface IDictionaryServiceProxy: IProxy
     {
         Task<IEnumerable<CountryItem>> GetCountriesAsync(string language);
+
+        Task<IEnumerable<Asset>> GetMarginalAssetsAsync();
     }
 }
